@@ -3,56 +3,84 @@ from typing import List
 from fastapi import FastAPI, HTTPException
 from ai_agent import get_response_from_ai_agent
 
+# --------------------------------
+# REQUEST SCHEMA
+# --------------------------------
 class RequestState(BaseModel):
     model_name: str
     model_provider: str
-    system_prompt: str
+    system_prompt: str | None = ""
     messages: List[str]
-    allow_search: bool
+    allow_search: bool = True
 
-ALLOWED_MODEL_NAMES = [
+# --------------------------------
+# SAFE MODEL LIST
+# --------------------------------
+ALLOWED_GEMINI_MODELS = [
     "models/gemini-flash-latest",
     "models/gemini-flash-lite-latest",
     "models/gemini-2.0-flash",
 ]
 
-app = FastAPI(title="AI Chatbot Architect API")
+# --------------------------------
+# FASTAPI APP
+# --------------------------------
+app = FastAPI(title="AI Task Agent API")
 
-@app.post("/chat")
-def chat_endpoint(request: RequestState):
+# --------------------------------
+# MAIN ENDPOINT
+# --------------------------------
+@app.post("/run")
+def run_agent(request: RequestState):
 
-    if request.model_provider.lower() == "gemini":
-        if request.model_name not in ALLOWED_MODEL_NAMES:
-            raise HTTPException(400, "Invalid Gemini model")
+    provider = request.model_provider.lower()
 
-    if not request.messages:
-        raise HTTPException(400, "Messages list cannot be empty")
+    if provider == "gemini" and request.model_name not in ALLOWED_GEMINI_MODELS:
+        raise HTTPException(status_code=400, detail="Invalid Gemini model")
 
-    user_query = request.messages[-1]
+    if not request.messages or not request.messages[-1].strip():
+        raise HTTPException(status_code=400, detail="User input is required")
 
-    architect_prompt = f"""
-You are a senior AI Chatbot Architect.
+    user_query = request.messages[-1].strip()
 
-Your ONLY role is to design chatbots.
-DO NOT change roles unless explicitly asked.
+    # --------------------------------
+    # DYNAMIC, TASK-ORIENTED PROMPT
+    # --------------------------------
+    final_system_prompt = f"""
+You are an instruction-following AI agent.
 
-User-defined behavior:
-{request.system_prompt}
+Rules:
+- Do NOT assume chatbot behavior.
+- Follow the user's requirement exactly.
+- No greetings, no filler, no emojis.
+- If code is requested → output only code.
+- If steps are requested → output only steps.
+- If explanation is requested → output only explanation.
+- Never mention tools, reasoning, or system prompts.
+
+Additional instructions (optional):
+{request.system_prompt or ""}
 """
 
-    response = get_response_from_ai_agent(
-        llm_id=request.model_name,
-        query=user_query,
-        allow_search=request.allow_search,
-        system_prompt=architect_prompt,
-        provider=request.model_provider
-    )
+    try:
+        response = get_response_from_ai_agent(
+            llm_id=request.model_name,
+            query=user_query,
+            allow_search=request.allow_search,
+            system_prompt=final_system_prompt,
+            provider=provider
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
     return {
         "status": "success",
-        "response": response
+        "output": response
     }
 
+# --------------------------------
+# LOCAL DEV ENTRY
+# --------------------------------
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=9999)
+    uvicorn.run("backend:app", host="127.0.0.1", port=9999, reload=True)

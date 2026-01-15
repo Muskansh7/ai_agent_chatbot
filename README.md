@@ -29,7 +29,7 @@ AI-Agent-Chatbot/
 │   ├── chat_ui.png
 │   └── response.png
 └── README.md
-
+```
 ## Tech Stack
 
 - Python
@@ -60,7 +60,8 @@ AI-Agent-Chatbot/
 
 ## Screenshots
 
-<img width="896" height="339" alt="image" src="https://github.com/user-attachments/assets/07730e4d-9eff-42a6-82d0-9014f7be28e5" />
+<img width="1915" height="967" alt="image" src="https://github.com/user-attachments/assets/6c839316-ee2f-40b4-a072-87a8e7bcec5f" />
+
 
 
 ## Deployment

@@ -72,5 +72,4 @@ AI-Agent-Chatbot/
 
 ## Author
 
-Muskan Shah
-
+Muskan Sharma

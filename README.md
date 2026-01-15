@@ -15,6 +15,24 @@ An end-to-end AI Agent Chatbot built with:
 - Clean conversational UI
 - Production-ready architecture
 
+## File Structure
+
+AI-Agent-Chatbot/
+│
+├── backend/
+│ ├── main.py # FastAPI app entry point
+│ ├── ai_agent.py # Agent logic & tools
+│ └── requirements.txt
+│
+├── frontend.py # Streamlit UI
+├── requirements.txt
+├── .env # API keys
+├── screenshots/
+│ ├── chat_ui.png
+│ ├── response.png
+│
+└── README.md
+
 ## Tech Stack
 - Python
 - FastAPI
@@ -22,9 +40,37 @@ An end-to-end AI Agent Chatbot built with:
 - LangChain
 - Streamlit
 
+## Project Structure
+
+- backend/
+  - main.py
+  - ai_agent.py
+- frontend.py
+- requirements.txt
+- .env
+
 ## Setup Instructions
 
-### 1. Clone repo
-```bash
-git clone <repo-url>
-cd ai-agent-chatbot
+## Setup
+
+1. Clone the repository
+2. Create and activate virtual environment
+3. Install dependencies using `requirements.txt`
+4. Add API keys to `.env`
+5. Run FastAPI backend
+6. Run Streamlit frontend
+
+## Screenshots
+
+
+
+## Deployment
+
+- Deployable on Streamlit Cloud (Free Tier)
+- Backend handled via FastAPI integration
+- Environment variables configured via Streamlit secrets
+
+## Author
+
+Muskan Shah
+

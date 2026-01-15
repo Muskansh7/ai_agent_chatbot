@@ -17,21 +17,20 @@ An end-to-end AI Agent Chatbot built with:
 
 ## File Structure
 
+```text
 AI-Agent-Chatbot/
-│
 ├── backend/
-│ ├── main.py # FastAPI app entry point
-│ ├── ai_agent.py # Agent logic & tools
-│ └── requirements.txt
-│
-├── frontend.py # Streamlit UI
+│   ├── main.py
+│   ├── ai_agent.py
+│   └── requirements.txt
+├── frontend.py
 ├── requirements.txt
-├── .env # API keys
+├── .env
 ├── screenshots/
-│ ├── chat_ui.png
-│ ├── response.png
-│
+│   ├── chat_ui.png
+│   └── response.png
 └── README.md
+
 
 ## Tech Stack
 - Python
@@ -62,6 +61,7 @@ AI-Agent-Chatbot/
 
 ## Screenshots
 
+<img width="896" height="339" alt="image" src="https://github.com/user-attachments/assets/07730e4d-9eff-42a6-82d0-9014f7be28e5" />
 
 
 ## Deployment

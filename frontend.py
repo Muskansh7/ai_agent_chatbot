@@ -25,6 +25,18 @@ MODEL_CATALOG = {
 }
 
 # --------------------------------
+# SESSION STATE
+# --------------------------------
+if "response" not in st.session_state:
+    st.session_state.response = ""
+
+# --------------------------------
+# CLEAR RESPONSE ON INPUT CHANGE
+# --------------------------------
+def clear_response():
+    st.session_state.response = ""
+
+# --------------------------------
 # SIDEBAR
 # --------------------------------
 with st.sidebar:
@@ -59,27 +71,8 @@ st.title("🧠 AI Task Agent")
 user_query = st.text_area(
     "Enter your requirement",
     placeholder="Example: Write a FastAPI JWT auth middleware",
-    height=120
-)
-
-# --------------------------------
-# SESSION STATE (SINGLE RESPONSE ONLY)
-# --------------------------------
-if "response" not in st.session_state:
-    st.session_state.response = ""
-
-# --------------------------------
-# CLEAR ON INPUT CHANGE
-# --------------------------------
-def clear_response():
-    st.session_state.response = ""
-
-st.text_area(
-    label="",
-    value=user_query,
-    on_change=clear_response,
-    key="hidden_input",
-    height=0
+    height=120,
+    on_change=clear_response
 )
 
 # --------------------------------

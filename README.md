@@ -16,7 +16,6 @@ An end-to-end AI Agent Chatbot built with:
 - Production-ready architecture
 
 ## File Structure
-
 ```text
 AI-Agent-Chatbot/
 ├── backend/
@@ -31,8 +30,8 @@ AI-Agent-Chatbot/
 │   └── response.png
 └── README.md
 
-
 ## Tech Stack
+
 - Python
 - FastAPI
 - LangGraph

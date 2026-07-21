@@ -1,0 +1,868 @@
+/* ==========================================================
+   GOOGLE FONT
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@600&display=swap');
+
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --bg:#FAF8F5;
+
+    --surface:#FFFFFF;
+
+    --primary:#7A5C3E;
+
+    --primary-hover:#64482F;
+
+    --secondary:#B08A63;
+
+    --border:#DDD1C2;
+
+    --text:#2F2925;
+
+    --text-light:#6E655D;
+
+    --success:#5F8A61;
+
+    --danger:#B24B45;
+
+    --radius:14px;
+
+    --shadow:
+0 4px 20px rgba(122,92,62,.08);
+
+    --transition:.25s ease;
+
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5{
+
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+
+}
+
+
+h1{
+
+    font-size:3rem;
+
+    margin-bottom:18px;
+
+}
+
+
+h2{
+
+    font-size:2rem;
+
+    margin-bottom:14px;
+
+}
+
+
+h3{
+
+    font-size:1.35rem;
+
+}
+
+
+p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:var(--transition);
+
+    font-family:inherit;
+
+}
+
+
+input,
+textarea,
+select{
+
+    font-family:inherit;
+
+    outline:none;
+
+}
+
+
+/* ==========================================================
+   COMMON LAYOUT
+========================================================== */
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}
+
+
+.section{
+
+    padding:70px 0;
+
+}
+
+
+/* ==========================================================
+   COMMON BUTTONS
+========================================================== */
+
+.primary-btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:14px 24px;
+font-weight:600;
+letter-spacing:.2px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.primary-btn:hover{
+
+    background:var(--primary-hover);
+
+}
+
+
+.secondary-btn{
+
+    background:white;
+
+    color:var(--primary);
+
+    border:1px solid var(--border);
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+}
+
+
+.secondary-btn:hover{
+
+    border-color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   COMMON CARD
+========================================================== */
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ===================================
+   MAIN PAGE
+=================================== */
+
+.main-page{
+    max-width:1300px;
+    margin:auto;
+    padding:60px 40px;
+}
+
+.hero{
+    text-align:center;
+    margin-bottom:60px;
+    padding:50px 0;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:var(--primary);
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:760px;
+    margin:auto;
+    color:var(--text-light);
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+.advisor-section h2{
+    color:var(--text);
+    margin-bottom:30px;
+}
+
+.advisor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+/* ======================================
+   SETTINGS
+====================================== */
+
+.settings-page{
+    max-width:700px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.settings-page h1{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.settings-page p{
+    color:var(--text-light);
+    margin-bottom:35px;
+}
+
+.setting-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    margin-bottom:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:var(--shadow);
+}
+
+.setting-card label{
+    font-weight:600;
+    color:var(--text);
+}
+
+.setting-card select{
+    width:260px;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:white;
+    outline:none;
+}
+
+.toggle input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+.save-btn{
+    margin-top:25px;
+    width:100%;
+    padding:14px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.save-btn:hover{
+    background:var(--primary-hover);
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.header{
+    width:100%;
+    height:75px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 6rem;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo-section{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+.logo-section h2{
+
+    margin:0;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.logo-section p{
+
+    display:none;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:36px;
+
+}
+
+.nav-links a{
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    transition:0.25s;
+
+    position:relative;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0%;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.25s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+    width:100%;
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    border-top:1px solid var(--border);
+    background:#ffffff;
+}
+
+.footer p{
+    margin:5px;
+    color:var(--text-light);
+    font-size:.9rem;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.advisor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+    margin-top:35px;
+}
+
+.advisor-card{
+
+    background:white;
+
+    border:1px solid #e8ddd1;
+
+    border-radius:16px;
+
+    padding:28px;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+.advisor-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.advisor-card h3{
+
+    margin:18px 0 10px;
+
+    color:#7A5C3E;
+
+}
+
+.advisor-card p{
+
+    color:#6d6258;
+
+    line-height:1.6;
+
+    min-height:75px;
+
+}
+
+.advisor-card button{
+
+    margin-top:18px;
+
+    background:none;
+
+    color:#7A5C3E;
+
+    font-weight:600;
+
+}
+
+.advisor-skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0;
+}
+
+.advisor-skills span{
+    background:#F3ECE4;
+    color:#7A5C3E;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:0.85rem;
+
+    font-weight:500;
+}
+
+.hero{
+
+    padding:70px 0 45px;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:3.2rem;
+
+}
+
+.hero p{
+
+    width:700px;
+
+    margin:20px auto;
+
+}
+.chat-page{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    padding:20px;
+
+}
+
+.chat-top{
+
+    margin-bottom:25px;
+
+}
+
+.back-btn{
+
+    background:none;
+
+    border:none;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.advisor-banner{
+
+    display:flex;
+
+    gap:25px;
+
+    padding:28px;
+
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:25px;
+
+}
+
+.advisor-icon{
+
+    font-size:50px;
+
+}
+
+.welcome-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    margin-bottom:25px;
+
+}
+
+.chat-history{
+
+    min-height:250px;
+
+    margin-bottom:20px;
+
+}
+
+.chat-input{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.chat-input textarea{
+
+    flex:1;
+
+    resize:none;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    font-size:15px;
+
+    min-height:70px;
+
+}
+
+.chat-input button{
+
+    width:120px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.chat-input button:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.nav-btn{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    transition:.25s;
+
+    font-family:inherit;
+
+}
+
+.nav-btn:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a.active{
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+   COUNCIL PAGE
+=========================== */
+
+.council-page{
+    max-width:900px;
+    margin:70px auto;
+    padding:20px;
+}
+
+.council-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.council-header h1{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.council-header p{
+    max-width:650px;
+    margin:auto;
+    color:var(--text-light);
+}
+
+.council-page h3{
+    margin-bottom:25px;
+}
+
+.council-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+.council-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.council-card:hover{
+
+    border-color:var(--primary);
+
+    transform:translateY(-3px);
+
+}
+
+.council-card.selected{
+
+    border:2px solid var(--primary);
+
+    background:#F5EEE5;
+
+}
+
+.council-card input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+.council-btn{
+
+    display:block;
+
+    margin:45px auto 0;
+
+    width:220px;
+
+}

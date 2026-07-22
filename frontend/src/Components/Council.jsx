@@ -22,6 +22,10 @@ const advisors = [
     icon: "🤝",
     title: "Friend",
   },
+  {
+    icon: "💰",
+    title: "FINANCIAL ADVISOR", 
+  },
 ];
 
 const Council = () => {

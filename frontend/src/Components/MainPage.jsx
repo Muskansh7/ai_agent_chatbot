@@ -44,6 +44,19 @@ const advisors = [
       "Combine multiple advisors for well-rounded guidance.",
     skills: ["Multiple Experts", "Balanced Advice"],
   },
+  {
+  icon: "💰",
+  title: "Financial Advisor",
+  description: "Get guidance on budgeting, investing, taxes, SIPs, stocks and personal finance.",
+  skills: [
+    "Budgeting",
+    "Investing",
+    "Mutual Funds",
+    "Stocks",
+    "Taxes",
+    "Retirement"
+  ]
+}
 ];
 
 const MainPage = () => {

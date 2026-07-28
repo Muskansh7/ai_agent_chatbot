@@ -149,7 +149,9 @@ const ChatBox = () => {
           <div className="advisor-skills">
             {councilMode ? (
               selectedAdvisors.map((item, index) => (
-                <span key={index}>{item}</span>
+                <span key={index}>
+                   {item.icon} {item.title}
+                </span>
               ))
             ) : advisor.skills.length > 0 ? (
               advisor.skills.map((skill, index) => (

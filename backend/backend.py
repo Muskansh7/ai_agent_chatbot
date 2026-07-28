@@ -64,7 +64,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://aiplacementadvisor-6m99wvolw-muskansh7s-projects.vercel.app/",
+        "https://aiplacementadvisor.vercel.app",
+        "https://aiplacementadvisor-git-main-muskansh7s-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
